@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 
 AUTHOR = 'Ernest Tavares III'
 SITENAME = 'Ernest Tavares III'
-SITEURL = 'http://etav.github.io'
+SITEURL = 'https://etav.github.io'
 THEME = '/Users/ernestt/Documents/pelican-themes/chris'
 
 PATH = 'content'

@@ -15,8 +15,7 @@ Before I dive into creating a classifier, I typically perform an exploratory ana
 
 However, I broke from my normal process as curiosity got the best of me. I was interested in learning about what the typical outcomes are for sheltered animals (check out the graph below).
 
-![Image of Outcomes]
-(https://github.com/etav/animal_shelter/blob/master/img/outcomes_by_animal.png)
+![Image of Outcomes](/images/animal_shelter/outcomes_by_animal.png)
 
 Luckily, as we see above, many animals are either adopted, transferred or in the case of dogs frequently returned to their owners.  
 
@@ -63,8 +62,7 @@ train$AgeuponOutcome[1:5]
 
 After this transformation, we're able to create a visualization which tells us the outcome of each animal type as a function of its age (in days).
 
-![Image of Age&Outcomes]
-(https://github.com/etav/animal_shelter/blob/master/img/age&outcome.png)
+![Image of Age&Outcomes](/images/animal_shelter/age&outcome.png)
 
 Interestingly the likelihood of being adopted for cats varies with age whereas for dogs there appears to be a slight negative correlation between a it's age and the probability it will be adopted.
 
@@ -73,9 +71,7 @@ For dogs, it seems older animals tend to have a higher likelihood of being retur
 ####Animal's Gender
 Moving on I decided to compare the differences in outcomes based on the animal's gender. It's clear that adopters favor animals (both cats and dogs) that have previously been neutered. It's interesting to note that a large proportion of cats which were not neutered are transferred to another animal shelter, where (my guess is) they are then neutered.
 
-![Image of Sex&Outcomes]
-(https://github.com/etav/animal_shelter/blob/master/img/outcome_by_sex.png)
-
+![Image of Sex&Outcomes](/images/animal_shelter/outcome_by_sex.png)
 
 ###Applying Random Forest
 After transforming our variables, performing univariate analysis and determining the validity of our sample, it's finally time to move to model building. I will create a random forest using the RandomForest package, using OutcomeType as our predictor variable (remember there are five levels, which complicates things a bit).
@@ -86,8 +82,7 @@ rf1 <- randomForest(OutcomeType~AnimalType+SexuponOutcome+Named+days_old+young+c
 rf1
 ```
 
-![Image of RF_Error]
-(https://github.com/etav/animal_shelter/blob/master/img/RF_Error.png)
+![Image of RF_Error](/images/animal_shelter/RF_Error.png)
 
 Our random forest model does poorly at classifying animal deaths which makes sense  when we consider only 197/26729
 or 0.007370272% of our training set were flagged as "Died". The model does fairly well at predicting instances where an adoption, transfer, or euthanasia occurs which make up the bulk of the training set. Furthermore, our OOB or out of bag error estimate is  35.28%.
@@ -115,8 +110,7 @@ Transfer            2641    0         83             954     5744   0.3903630
 ###Determining Variable Importance
 Finally, we'll rank our predictor variables based on their mean reduction in Gini error.
 
-![Image of var_importance]
-(https://github.com/etav/animal_shelter/blob/master/img/var_importance.png)
+![Image of var_importance](/images/animal_shelter/var_importance.png)
 
 
 As we see in the graphic above, the animal's sex and age were most useful to reduce the mean Gini Error. Interestingly, animal type (ie: cat or dog) and the physical features of the animal such as the color mattered less.
