@@ -188,13 +188,13 @@ print 'Probabilities:', knn.predict_proba([X_pred, ])
 Here's a graphical representation of the classifier we created above. As we can see from this plot, the virgincia species is relatively easier to classify when compared to versicolor and setosa.
 
 *kNN Plot*
-![knn_plot](./img/kNN_plot_final.png "kNN Plot")
+![knn_plot](/images/knn_iris/kNN_plot_final.png)
 
 # Conclusion
 The number of neighbors to implement is highly data-dependent meaning optimal neighborhood sizes will differ greatly between data sets.
 
-**It is important to select a classifier which balances generalizability (percision) and accuracy or we are at risk of overfitting.** For example, if we pick a classifier which fits the data perfectly we will lose the ability to make generalizable inferences from it (this would look like the 'low accuracy', 'high precision' scenario below because our model is very good at predicting training data but misses completely when presented with new data). Best practice is to test multiple classifiers using a testing data set to ensure we're making apropriate trade-offs between accuracy and generalizability.
+**It is important to select a classifier which balances generalizability (precision) and accuracy or we are at risk of overfitting.** For example, if we pick a classifier which fits the data perfectly we will lose the ability to make generalizable inferences from it (this would look like the 'low accuracy', 'high precision' scenario below because our model is very good at predicting training data but misses completely when presented with new data). Best practice is to test multiple classifiers using a testing data set to ensure we're making appropriate trade-offs between accuracy and generalizability.
 
 We're shooting for high-accuracy and high-precision
 
- ![Accuracy_Percision](./img/acc_vs_perc.jpg "Accuracy")
+ ![accuracy_percision](/images/knn_iris/acc_vs_perc.png)
