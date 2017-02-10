@@ -5,7 +5,7 @@ Date: 2017-01-20 12:00
 Authors: Ernest Tavares III
 
 
-<img align = "left" src="{filename}/images/ernest_profile.jpg style='max-width:45%; margin=15px;'"></img>
+<img align = "left" src="{filename}/images/ernest_profile.jpg"></img>
 
 
 

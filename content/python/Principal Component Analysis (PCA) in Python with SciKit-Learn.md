@@ -1,3 +1,12 @@
+---
+Title: Principle Component Analysis (PCA) with Scikit-Learn
+Slug: scikit_pca
+Summary: Principle Component Analysis (PCA) with Scikit-Learn
+Date: 2017-2-10 3:20
+Category: Python
+Tags: Scikit-Learn
+Authors: Ernest Tavares III
+---
 
 # Principal Component Analysis (PCA) in Python using Scikit-Learn
 
@@ -6,12 +15,12 @@
 ### PCA Introduction
 PCA uses ["orthogonal linear transformation"](http://mathworld.wolfram.com/OrthogonalTransformation.html) to project the features of a data set onto a new coordinate system where the feature which explains the most variance is positioned at the first coordinate (thus becoming the first principal component). [Source](https://en.wikipedia.org/wiki/Principal_component_analysis)
 
-PCA allows us to quantify the trade-offs between the number of features we utilize and the total variance explained by the data. PCA allows us to determine which features capture similiar information and discard them to create a more parsimonious model. 
+PCA allows us to quantify the trade-offs between the number of features we utilize and the total variance explained by the data. PCA allows us to determine which features capture similiar information and discard them to create a more parsimonious model.
 
 In order to perform PCA we need to do the following:
 
 ### PCA Steps
-1. Standardize the data. 
+1. Standardize the data.
 2. Use the standardized data to create a covariance matrix.
 3. Use the resulting matrix to calculate eigenvectors (principal components) and their corresponding eigenvalues.
 4. Sort the components in decending order by its eigenvalue.
@@ -32,7 +41,7 @@ Resources
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
-from sklearn import decomposition 
+from sklearn import decomposition
 from sklearn.preprocessing import scale
 from sklearn.decomposition import PCA
 import seaborn as sb
@@ -54,7 +63,7 @@ loan = pd.read_csv('loan.csv').sample(frac = .25) #read the dataset and sample 2
       interactivity=interactivity, compiler=compiler, result=result)
 
 
-For this example, we're going to use the Lending Club data set which can be found [here](https://www.kaggle.com/wendykan/lending-club-loan-data). 
+For this example, we're going to use the Lending Club data set which can be found [here](https://www.kaggle.com/wendykan/lending-club-loan-data).
 
 
 ```python
@@ -81,7 +90,7 @@ x = scale(x);x
             -0.45317429,  0.        ],
            [ 0.50760835,  0.50047945,  0.40304998, ..., -0.07607754,
             -0.35598935,  0.        ],
-           ..., 
+           ...,
            [ 1.16244466,  1.15544092,  0.85591931, ..., -0.07607754,
             -0.34906088,  0.        ],
            [-1.13519249, -1.11536499, -0.6299657 , ..., -0.07607754,
@@ -118,7 +127,7 @@ var #cumulative sum of variance explained with [n] features
 
 
 
-In the above array we see that the **first feature explains roughly 33%** of the variance within our data set while the first two explain 58.9 and so on. If we employ 10 features we capture 98.4% of the variance within the dataset, thus we gain very little by implementing an additional feature (think of this as diminishing marginal return on total variance explained). 
+In the above array we see that the **first feature explains roughly 33%** of the variance within our data set while the first two explain 58.9 and so on. If we employ 10 features we capture 98.4% of the variance within the dataset, thus we gain very little by implementing an additional feature (think of this as diminishing marginal return on total variance explained).
 
 ### Step 4, 5 & 6: Sort & Select
 
@@ -130,7 +139,7 @@ plt.title('PCA Analysis')
 plt.ylim(30,100.5)
 plt.style.context('seaborn-whitegrid')
 
-    
+
 plt.plot(var)
 ```
 
