@@ -151,7 +151,7 @@ plt.plot(var)
 
 
 
-![png](output_13_1.png)
+![pca1](/images/pca/pca1.png)
 
 
 Based on the plot above it's clear we should pick 10 features.  
