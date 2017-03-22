@@ -748,8 +748,6 @@ df[['class','petal_width_cm']] #two columns
 
 
 
-This can be done by providing the column name as a string or by inputing the column number. All three of the methods below produce the same output.
-
 ## Selecting Rows & Columns
 
 

@@ -128,7 +128,7 @@ df['class'].value_counts().plot()
 
 
 
-![png](output_6_1.png)
+![png](/images/counting_basic_plots/output_6_1.png)
 
 
 I think a bar graph would be more useful, visually.
@@ -141,7 +141,7 @@ df['class'].value_counts().plot('bar')
 
 
 
-![png](output_8_1.png)
+![png](/images/counting_basic_plots/output_8_1.png)
 
 
 
@@ -153,7 +153,7 @@ df['class'].value_counts().plot('barh') #horizontal bar plot
 
 
 
-![png](output_9_1.png)
+![png](/images/counting_basic_plots/output_9_1.png)
 
 
 
@@ -162,7 +162,7 @@ df['class'].value_counts().plot('barh').invert_yaxis() #horizontal bar plot
 ```
 
 
-![png](output_10_0.png)
+![png](/images/counting_basic_plots/output_10_0.png)
 
 
 There you have it, a ranked bar plot for categorical data in just 1 line of code using python!
@@ -180,7 +180,7 @@ df['sepal_length_cm'].hist() #horizontal bar plot
 
 
 
-![png](output_13_1.png)
+![png](/images/counting_basic_plots/output_13_1.png)
 
 
 
@@ -195,7 +195,7 @@ df['sepal_length_cm'].hist(bins = 30) #add granularity
 
 
 
-![png](output_15_1.png)
+![png](/images/counting_basic_plots/output_15_1.png)
 
 
 
@@ -207,7 +207,7 @@ df['sepal_length_cm'].hist(bins = 30, range=[4, 8]) #add granularity & range
 
 
 
-![png](output_16_1.png)
+![png](/images/counting_basic_plots/output_16_1.png)
 
 
 
@@ -219,7 +219,7 @@ df['sepal_length_cm'].hist(bins = 30, range=[4, 8], facecolor='gray') #add granu
 
 
 
-![png](output_17_1.png)
+![png](/images/counting_basic_plots/output_17_1.png)
 
 
 There you have it, a stylized histogram for numerical data using python in 1 compact line of code.
