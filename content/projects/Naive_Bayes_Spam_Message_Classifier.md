@@ -121,7 +121,7 @@ df.head()
 
 
 ## 2.1 Enter Bag of Words
-Since we're dealing with text data and the naive bayes classifier is better suited to having numerial data as inputs we will need to perform transformations. To accomplish this we'll use the ("bag of words")[https://en.wikipedia.org/wiki/Bag-of-words_model] method to count the frequency of occurance for each word. Note: the bag of word methods assumes equal weight for all words in our "bag" and does not consider the order of occurance for words.
+Since we're dealing with text data and the naive bayes classifier is better suited to having numerical data as inputs we will need to perform transformations. To accomplish this we'll use the ("bag of words")[https://en.wikipedia.org/wiki/Bag-of-words_model] method to count the frequency of occurance for each word. Note: the bag of word methods assumes equal weight for all words in our "bag" and does not consider the order of occurance for words.
 
 There are modules that will do this for us but we will implement bag of words from scratch to understand what's happening under the hood.
 
@@ -362,9 +362,9 @@ test = count_vector.transform(X_test)
 
 ## 4.1 Implementing Baye's Theorem from Scratch
 
-Baye's theorem calculates the probability of a given class or state given the joint-probability distribution of the input variables (betas). There are numerous libraries which take care of this for us native to python and R but in order to understand what's happening behind the scenes let's calculate bayes theorem from scratch.
+Bayes' theorem calculates the probability of a given class or state given the joint-probability distribution of the input variables (betas). There are numerous libraries which take care of this for us native to python and R but in order to understand what's happening behind the scenes let's calculate bayes theorem from scratch.
 
-Here we'll create a ficticuous world in which we're testing patients for HIV.
+Here we'll create a fictitious world in which we're testing patients for HIV.
 
 **P(HIV)** = The odds of a person having HIV is .015 or 1.5%
 
@@ -381,12 +381,12 @@ Baye's Formula:
 ![img](http://www.idgconnect.com/IMG/313/9313/formula-image.jpg)
 
 Where:
-- `P(A)` is the probability of A occuring independently, for us this is `P(HIV)`.
-- `P(B)` is the probability of B occuring independently, for us this is `P(Positive)`.
-- `P(A|B)` is the posterior probability of A occuring given B occurs, for us this is `P(HIV | Positive)`. This is the probability that an individual has HIV given their test results are positive and what we're trying to calculate.
-- `P(B|A)` is the likelihood probability of B occuring, given A occus. In our example this is `P(Positive | HIV)`. This value is given to us.
+- `P(A)` is the probability of A occurring independently, for us this is `P(HIV)`.
+- `P(B)` is the probability of B occurring independently, for us this is `P(Positive)`.
+- `P(A|B)` is the posterior probability of A occurring given B occurs, for us this is `P(HIV | Positive)`. This is the probability that an individual has HIV given their test results are positive and what we're trying to calculate.
+- `P(B|A)` is the likelihood probability of B occurring, given A occurs. In our example this is `P(Positive | HIV)`. This value is given to us.
 
-Strining these together we get:
+Stringing these together we get:
 
 `P(HIV | Positive) = ((P(HIV) * P(Positive | HIV)) / P(Positive)`
 
@@ -396,7 +396,7 @@ Thus the probability of getting a positive HIV test result `P(HIV)` becomes:
 
 
 ```python
-#perfoming calculations:
+#performing calculations:
 
 
 p_hiv = .015 #P(HIV) assuming 1.5% of the population has HIV
@@ -415,7 +415,7 @@ print "The probability of getting a positive test result is:", p_positive, "this
     The probability of getting a positive test result is: 0.06325 this is our prior
 
 
-Using this prior we can calculate our posterior probalities as follows:
+Using this prior we can calculate our posterior probabilities as follows:
 
 The probability of an individual having HIV given their test result is positive.
 
@@ -450,7 +450,7 @@ print "The probability of an individual not having HIV given getting a positive 
     The probability of an individual not having HIV given getting a positive test result is: 0.774703557312
 
 
-That's it! We've just demonstrated how to calculate Bayes theorem from scrath. In our toy example we showed that if an individual gets a positive test result the probability this individual has HIV is 22.5% and 77.5% that they do not have HIV. We can check the validity of our results by summing the probability of both cases:
+That's it! We've just demonstrated how to calculate Bayes theorem from scratch. In our toy example we showed that if an individual gets a positive test result the probability this individual has HIV is 22.5% and 77.5% that they do not have HIV. We can check the validity of our results by summing the probability of both cases:
 
 
 ```python
@@ -469,7 +469,7 @@ posterior_sum #sum to 1, looks good!
 
 In the above example we only the probability given two inputs (the test result and the status of the disease in the patient). This calculation would grow exponentially more complex given numerous inputs and would be painstaking to calculate by hand. Don't worry, SciKit-Learn is here to save the day (and a ton of time)!
 
-Our spam classifier will use multinomial naive bayes method from `sklearn.nive_bayes`. This method is well-suited for for discrete inputs (like word counts) whereas the Gaussian Naive Bayes classifier performs better on continuous inputs.
+Our spam classifier will use multinomial naive Bayes method from `sklearn.nive_bayes`. This method is well-suited for for discrete inputs (like word counts) whereas the Gaussian Naive Bayes classifier performs better on continuous inputs.
 
 
 ```python
