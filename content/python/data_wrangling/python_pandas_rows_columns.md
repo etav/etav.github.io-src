@@ -786,7 +786,7 @@ df[df.columns[4]][5:10] #observations 5-10 using 'columns'
 
 
 ```python
-df.ix[:, 4][-5:] # last two observations of column using 'ix'
+df.ix[:, 4][-5:] # last five observations of column using 'ix'
 ```
 
 
