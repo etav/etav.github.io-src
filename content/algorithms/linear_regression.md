@@ -133,7 +133,7 @@ ax.set_title("OLS Regression")
 
 
 
-![png](images/linear_regression/tuition_sat.png)
+![png](/images/linear_regression/tuition_sat.png)
 
 
 ### Plot of Out of State Tuition and Admittance Rate
@@ -155,4 +155,4 @@ ax.set_title("OLS Regression")
 
 
 
-![png](images/linear_regression/tuition_admit.png)
+![png](/images/linear_regression/tuition_admit.png)
